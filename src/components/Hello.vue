@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>{{ task }}</h2>
+    <h2 v-if="visible">{{ task }}</h2>
+    <button v-on:click="writeConsole">Click Me then Open Your Console</button>
   </div>
 </template>
 
@@ -12,7 +13,13 @@ export default {
     return {
       msg: 'This Is My First Vue App',
       task: 'now what?',
+      visible: true,
     };
+  },
+  methods: {
+    writeConsole() {
+      console.warn('hello!');
+    },
   },
 };
 </script>
