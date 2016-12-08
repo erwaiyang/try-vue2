@@ -1,6 +1,11 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <ol>
+      <li v-for="link in links">
+        <a :href="link.url">{{ link.name }}</a>
+      </li>
+    </ol>
     <button v-on:click="toggleVisible">Toggle Visible</button>
     <h2 v-if="visible">{{ task }}</h2>
   </div>
@@ -14,6 +19,20 @@ export default {
       msg: 'This Is My First Vue App',
       task: 'now what?',
       visible: true,
+      links: [
+        {
+          name: 'blog',
+          url: 'https://erwaiyang.github.io/blog',
+        },
+        {
+          name: 'personal website',
+          url: 'https://erwaiyang.github.io/',
+        },
+        {
+          name: 'PaGamO',
+          url: 'https://www.pagamo.org/',
+        },
+      ],
     };
   },
   methods: {
