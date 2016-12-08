@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button v-on:click="toggleVisible">Toggle Visible</button>
     <h2 v-if="visible">{{ task }}</h2>
-    <button v-on:click="writeConsole">Click Me then Open Your Console</button>
   </div>
 </template>
 
@@ -17,8 +17,8 @@ export default {
     };
   },
   methods: {
-    writeConsole() {
-      console.warn('hello!');
+    toggleVisible() {
+      this.visible = !this.visible;
     },
   },
 };
